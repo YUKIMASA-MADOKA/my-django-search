@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>people_list</title>
+</head>
+<body>
+    <!-- formを追加 -->
+    <form action="" method="get">
+        <input name="query" value="{{ request.GET.query }}" type="text" />
+        <button type="submit">検索する</button>
+    </form>
+      
+    <table border="1">
+        <tr>
+            <th>name</th>
+        </tr>
+        {% for people in object_list %}
+        <tr>
+            <td>{{ people.name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
